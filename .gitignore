@@ -12,3 +12,4 @@ db/
 wp-config.php
 wordpress/wp-config.php
 wordpress/.htaccess
+.DS_Store
