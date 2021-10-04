@@ -14,8 +14,11 @@
 
 get_header();
 ?>
+	<section class="banner">
 
-	<main id="primary" class="site-main">
+	</section>
+
+	<main id="primary" class="site-main container">
 
 		<?php
 		if ( have_posts() ) :
