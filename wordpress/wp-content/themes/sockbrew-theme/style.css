@@ -25,6 +25,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Imports & Variables
+	- Fonts
+	- Colors
 # Generic
 	- Normalize
 	- Box sizing
@@ -50,6 +53,23 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# Imports & Variables
+--------------------------------------------------------------*/
+
+/* Fonts
+	 ========================================================================== */
+	@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;500;700&family=Fira+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* Colors
+	 ========================================================================== */
+:root{
+	--main: #84A7B5;
+	--secondary: green;
+	--accent: brown;
+	--lightest: #fcfcfc;
+	--darkest: #242424;
+}
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -640,6 +660,41 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+
+/* page header */
+#masthead{
+	background-color: var(--main);
+	padding:2rem 8rem;
+	display: flex;
+}
+
+/* page footer */
+#colophon{
+	background-color: var(--main);
+	min-height: 4rem;
+	padding:2rem 8rem;
+	display: flex;
+}
+.site-info{
+	/* height: 4rem; */
+}
+
+/* General */
+.container{
+	min-height: 100vh;
+	margin: 2rem auto;
+	width: calc(100% - 8rem);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 1rem;
+	row-gap: 1rem;
+}
+.banner{
+	width: 100%;
+	min-height: 200%;
+	max-height: 400px;
+	background-color: var(--secondary);
+}
 
 /*--------------------------------------------------------------
 # Components
