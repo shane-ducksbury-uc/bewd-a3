@@ -21,7 +21,26 @@ get_header();
 				<h4><?php the_field('forum_date') ?></h4>
 				<p><?php the_field('description') ?></p>
 				<p><?php the_field('youtube_link') ?></p>
-				<!-- Need the forum speakers here -->
+				<h3>Topics and Speakers</h3>
+				<table class="uk-table uk-table-striped">
+					<thead>
+						<th>Speaker</th>
+						<th>Credentials</th>
+						<th>Topic</th>
+					</thead>
+					<tbody>
+						<?php 		
+						$speakers = get_field('topics_and_speakers'); 
+						foreach ($speakers as $speaker): ?>
+							<tr>
+								<td><?php echo $speaker["speaker_name"]?></td>
+								<td><?php echo $speaker["speaker_credentials"]?></td>
+								<td><?php echo $speaker["speaker_topic"]?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				
 			</div>
 
 			<?php 

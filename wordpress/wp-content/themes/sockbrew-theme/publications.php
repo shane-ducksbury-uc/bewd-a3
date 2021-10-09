@@ -15,11 +15,10 @@ get_header();
 
 <main id="primary" class="publications-main">
 	<h1>Publications</h1>
-
-
 	<!-- Filter for Categories -->
-	<div uk-filter="target: publications-list">
+	<div>
 		<ul class="uk-subnav uk-subnav-pill">
+			<li class="js-filter-item uk-active"><a href="">All</a></li>
 			<?php 
 				$publication_categories = get_categories(array(
 					'taxonomy' => 'publications_category',
@@ -27,11 +26,10 @@ get_header();
 				));
 				if ($publication_categories) :
 					foreach ($publication_categories as $publication_category) :  ?>
-						<li uk-filter-control=".<?php echo $publication_category->slug ?>"><a href="#"><?php echo $publication_category->name ?></a></li>
+						<li class="js-filter-item" data-category="<?php echo $publication_category->term_id?>"><a href="<?php echo $publication_category->term_id?>"><?php echo $publication_category->name ?></a></li>
 				<?php endforeach; endif;?>
 		</ul>
 	<div class="publications-container">
-		<ul class="publications-list">
 		<?php
 		$publications_posts_query = array(
 			'number-posts' => -1,
@@ -39,15 +37,9 @@ get_header();
 		);
 
 		$publications = new WP_Query($publications_posts_query);
-
+// Doco has a if in here.
 		while ($publications->have_posts()) :
 			$publications->the_post(); ?>
-			<li class="<?php 
-				$post_categories = get_field('category');
-				if ($post_categories) :
-					foreach ($post_categories as $post_category) : 
-						 echo $post_category->slug ; 
-						endforeach; endif; ?>">
 			<div class="uk-card uk-card-default">
 				<div class="uk-card-header">
 					<div class="uk-card-title">
@@ -68,9 +60,8 @@ get_header();
 					endif; ?>
 				</div>
 			</div>
-				</li>
-		<?php endwhile; ?>
-		</ul>
+		<?php endwhile; 
+		wp_reset_postdata()?>
 	</div>
 	</div>
 </main>
