@@ -189,3 +189,6 @@ function custom_load_uikit() {
 
     wp_enqueue_script( 'uikit-icons', '//cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/js/uikit-icons.min.js', array( 'jquery' ), '3.0.0.30', true );
 }
+
+require_once('inc/scripts.php');
+require_once('inc/ajax/publications-ajax.php');
