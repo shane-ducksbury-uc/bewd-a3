@@ -19,41 +19,35 @@ get_header();
 			
 			<div class="publication-info-container">
 				<!-- Could be refactored into a loop -->
-				<h1><?php the_title() ?></h1>
-				<h3><?php the_field('authors') ?></h3>
-				<p><?php the_field('published_year') ?></p>
-				<p><?php the_field('citation') ?></p>
-				<p><?php the_field('abstract') ?></p>
+				<?php the_title('<h1>', '</h1>') ?>
+				<h3>Authors: <?php the_field('authors') ?></h3>
+				<p>Categories:</p>
+				<?php
+					$post_categories = get_field('category');
+					if ($post_categories) :
+						foreach ($post_categories as $post_category) : ?>
+							<span><?= $post_category->name ?></span>
+					<?php endforeach;
+					endif; ?>
+				<?php if(get_field('published_year')): ?>
+					<p>Year: <?= the_field('published_year');?></p>
+				<?php endif;?>
+				<?php if(get_field('citation')): ?>
+					<p>Citation Details: <?= the_field('citation');?></p>
+				<?php endif;?>
+				<?php if(get_field('abstract')): ?>
+					<p>Abstract:</p> 
+					<p><?= the_field('abstract');?></p>
+				<?php endif;?>
 			</div>
 
 			<div class="publication-action-container">
-				<img src="https://via.placeholder.com/300x400">
+				<!-- Need to set a max width for this. -->
+				<img src="<?php the_field('publication_image')?>">
 				<a class="uk-button uk-button-primary" href=<?php the_field('link_to_publication')?>>View Publication</a>
 				<a class="uk-button uk-button-secondary" href="#">Share on LinkedIn</a>
 			</div>
-
-
-
-
-
-			<?php
-			// the_post_navigation(
-			// 	array(
-			// 		'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'a-custom-theme-for-sockbrew-design' ) . '</span> <span class="nav-title">%title</span>',
-			// 		'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'a-custom-theme-for-sockbrew-design' ) . '</span> <span class="nav-title">%title</span>',
-			// 	)
-			// );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			// if ( comments_open() || get_comments_number() ) :
-			// 	comments_template();
-			// endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
+			<?php endwhile; ?>
+	</main>
 <?php
-// get_sidebar();
 get_footer();
