@@ -740,11 +740,9 @@ textarea {
 .container{
 	min-height: 100vh;
 	margin: 2rem auto;
-	width: calc(100% - 8rem);
-	/* display: grid;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 1rem;
-	row-gap: 1rem; */
+	width: clamp( 250px, 80%, 800px);
+	display: flex;
+	flex-direction: column;
 }
 .banner{
 	width: 100%;
@@ -1155,9 +1153,6 @@ header {
 		text-align: right;
 	}
 
-	.container{
-		grid-template-columns: auto;
-	}
 
 	#colophon{
 		padding: 1rem;
