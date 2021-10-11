@@ -668,6 +668,7 @@ textarea {
 	display: grid;
 	grid-template-columns: auto auto;
 	column-gap: 1rem;
+	margin: 0;
 }
 /* Logo Stuff */
 .site-branding{
@@ -1171,4 +1172,27 @@ header {
 	#colophon .uk-list{
 		align-items: center;
 	}
+}
+
+.homecolumns {
+	width: clamp( 250px, 80%, 1200px);
+	margin: auto;
+	padding-top: 2em;
+}
+
+.about {
+	width: clamp( 250px, 80%, 1200px);
+	margin: auto;
+}
+
+.home .entry-header {
+	display: none;
+}
+
+.home h2 {
+	color: #84A7B5;;
+}
+
+.entry-content {
+	margin: 0;
 }
