@@ -12,8 +12,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="forums-main">
-		<h1>Publications</h1>
+	<main id="primary" class="forums-main container">
+		<h1>Forums</h1>
 
 		<div class="forums-container">
 
