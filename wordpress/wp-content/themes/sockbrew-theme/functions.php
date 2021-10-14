@@ -234,4 +234,10 @@ function generate_publication_posts($category = null) {
 		</div>
 	<?php endwhile; 
 	wp_reset_postdata();
-}?>
+}
+
+function generate_linkedin_url($url, $title){
+	return "http://www.linkedin.com/shareArticle?mini=true&url=https://" . $_SERVER['SERVER_NAME'] . urlencode($url) . "&title=" . urlencode($title);
+}
+
+?>

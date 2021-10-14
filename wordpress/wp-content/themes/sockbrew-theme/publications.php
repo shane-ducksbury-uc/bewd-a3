@@ -30,7 +30,10 @@ get_header();
 				<?php endforeach; endif;?>
 		</ul>
 	<div class="publications-container">
-		<?php generate_publication_posts() ?>
+		<?php 
+		// Find this in the functions folder
+		generate_publication_posts() ;
+		?>
 	</div>
 	</div>
 </main>

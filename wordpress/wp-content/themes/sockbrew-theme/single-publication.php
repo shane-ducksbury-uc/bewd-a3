@@ -45,7 +45,7 @@ get_header();
 				<!-- Need to set a max width for this. -->
 				<img src="<?php the_field('publication_image')?>">
 				<a class="uk-button uk-button-primary" href=<?php the_field('link_to_publication')?>>View Publication</a>
-				<a class="uk-button uk-button-secondary" href="#">Share on LinkedIn</a>
+				<a class="uk-button uk-button-secondary" target="_blank" href="<?php echo generate_linkedin_url($_SERVER['REQUEST_URI'], get_the_title())?>">Share on LinkedIn</a>
 			</div>
 			<?php endwhile; ?>
 	</main>
