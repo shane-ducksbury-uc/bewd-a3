@@ -98,7 +98,7 @@ html {
  * Remove the margin in all browsers.
  */
 body {
-	margin: 0;
+	margin: 0 !important;
 }
 
 /**
@@ -739,7 +739,7 @@ textarea {
 
 /* General */
 .container{
-	min-height: 100vh;
+	min-height: calc(100vh - 32rem);
 	margin: 2rem auto;
 	width: clamp( 250px, 80%, 800px);
 	display: flex;
@@ -1130,6 +1130,23 @@ header {
 	flex-direction: column;
 }
 
+
+/*--------------------------------------------------------------
+# typogoraphy overrides
+--------------------------------------------------------------*/
+
+p{
+	font-family: 'Fira Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .entry-title, .has-huge-font-size, .has-extra-large-font-size, .nav-menu a{
+	font-family: 'Darker Grotesque', sans-serif;
+	font-weight: 700;
+}
+
+.has-huge-font-size, .has-extra-large-font-size{
+	font-size: 2rem;
+}
 
 /*--------------------------------------------------------------
 # Breakpoints
