@@ -1157,6 +1157,7 @@ header {
 p{
 	font-family: 'Fira Sans', sans-serif;
 }
+
 .professionalAttribution p, .professionalAttribution span{
 	font-size: .75rem;
 	margin: 0;
@@ -1165,7 +1166,7 @@ table, thead{
 	font-size: .75rem;
 }
 
-h1, h2, h3, h4, h5, h6, .entry-title, .has-huge-font-size, .has-extra-large-font-size, .nav-menu a, .professionalAttribution h5, .uk-accordion-title{
+h1, h2, h3, h4, h5, h6, .entry-title, .has-huge-font-size, .has-extra-large-font-size, .nav-menu a, .professionalAttribution h5, .uk-accordion-title, input{
 	font-family: 'Darker Grotesque', sans-serif !important;
 	/* font-weight: 700; */
 }
@@ -1263,9 +1264,64 @@ h5{font-size: 1.5rem;}
 }
 
 .home h2 {
-	color: #84A7B5;;
+	color: #84A7B5;
 }
 
 .entry-content {
 	margin: 0;
+}
+
+/* Override for the RED em in UI Kit */
+/* Feel free to fix the em colour in UI Kit somewhere, I was just frustrated and forced it here - Shane */
+.citation-em {
+	color: #404040 !important;
+}
+
+#search-modal-open, #search-modal-close {
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+#header-widget-modal {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 98%;
+	z-index: 10;
+	background-color: #84A7B5;
+	overflow: hidden;
+}
+
+#header-widget-modal-content-wrapper {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#search-modal-close {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+}
+
+#custom-search {
+	width: 80ch;
+	height: 200px;
+}
+
+#custom-search input {
+	padding: 1rem 1rem;
+	border: none;
+	border-bottom: 2px solid inherit;
+	font-size: 2rem;
+}
+
+#custom-search button {
+	background-color: #FCFCFC;
+	padding: 0 2rem;
 }
