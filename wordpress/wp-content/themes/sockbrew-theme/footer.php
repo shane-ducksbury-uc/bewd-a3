@@ -68,16 +68,6 @@
 		</div>
 	</div>
 
-
-		
-		
-			
-		
-		
-		
-
-
-		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

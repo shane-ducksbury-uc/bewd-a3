@@ -32,9 +32,20 @@ get_header();
 				<?php if(get_field('published_year')): ?>
 					<p>Year: <?= the_field('published_year');?></p>
 				<?php endif;?>
-				<?php if(get_field('citation')): ?>
-					<p>Citation Details: <?= the_field('citation');?></p>
-				<?php endif;?>
+				<p>Citation Details: <?= the_field('citation');?></p>
+				<p><?php
+					$title = get_the_title();
+				 	$authors = get_field('authors');
+					$year = get_field('published_year');
+					$url = get_field('link_to_publication');
+
+					if(!$year):
+						$year = "N.d";
+					endif;
+					
+					echo "${authors} (${year}) <em class='citation-em'>${title}</em> retrieved from ${url}";
+
+					?></p>
 				<?php if(get_field('abstract')): ?>
 					<p>Abstract:</p> 
 					<p><?= the_field('abstract');?></p>
