@@ -195,7 +195,7 @@ require_once('inc/ajax/publications-ajax.php');
 
 function generate_publication_posts($category = null) {
     $publications_posts_query = array(
-        'number-posts' => -1,
+        'posts_per_page' => -1,
         'post_type' => 'publication'
     );
 

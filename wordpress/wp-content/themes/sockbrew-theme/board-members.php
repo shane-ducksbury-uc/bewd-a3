@@ -21,7 +21,7 @@ get_header();
 			<div class="leaderGrid">
 				<?php
 			$board_member_posts_query = array(
-				'number-posts' => -1,
+				'posts_per_page' => -1,
 				'post_type' => 'board-member'
 			);
 			
