@@ -19,7 +19,7 @@ get_header();
 
 			<?php
 		$publications_posts_query = array(
-			'number-posts' => -1,
+			'posts_per_page' => -1,
 			'post_type' => 'forum'
 		);
 		
