@@ -64,6 +64,7 @@
 				<li><a href="/ibqc-leadership/">IBQC Leadership</a></li>
 				<li><a href="/publications/">Publications</a></li>
 				<li><a href="/contact">Contact</a></li>
+				<li><a href="/ibqc-news">IBQC News</a></li>
 			</ul>
 		</div>
 	</div>
