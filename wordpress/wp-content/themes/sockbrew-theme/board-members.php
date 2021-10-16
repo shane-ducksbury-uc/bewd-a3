@@ -46,9 +46,11 @@ get_header();
 						<div class="uk-width-auto">
 							<img class="uk-border-circle" src="<?php the_field('board_member_image'); ?>">
 						</div>
-						<div class="uk-width-expand">
+						<div class="uk-width-expand board-member-header-texts">
 							<h3 class="uk-card-title uk-margin-remove-bottom"><?php the_title(); ?></h3>
-							
+							<?php if(get_field('board_member_title')): ?>
+							<h4 class="uk-text-meta uk-margin-remove-top"><?php the_field('board_member_title'); ?></h4>
+						<?php endif;?>
 						</div>
 
 					</div>
@@ -62,9 +64,7 @@ get_header();
 							<!-- card body start -->
 					<div class="uk-card-body">
 
-						<?php if(get_field('board_member_title')): ?>
-							<p class="uk-text-meta uk-margin-remove-top"><?php the_field('board_member_title'); ?></p>
-						<?php endif;?>
+						
 
 						<?php if(get_field('secondary_title')): ?>
 							<p class="uk-text-meta uk-margin-remove-top"><?php the_field('secondary_title'); ?></p>

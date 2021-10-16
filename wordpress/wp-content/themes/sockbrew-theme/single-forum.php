@@ -20,7 +20,7 @@ get_header();
 				<h1><?php the_title() ?></h1>
 				<h4><?php the_field('forum_date') ?></h4>
 				<p><?php the_field('description') ?></p>
-				<p><?php the_field('youtube_link') ?></p>
+				<p class="forum-video"><?php the_field('youtube_link') ?></p>
 				<h3>Topics and Speakers</h3>
 				<table class="uk-table uk-table-striped">
 					<thead>

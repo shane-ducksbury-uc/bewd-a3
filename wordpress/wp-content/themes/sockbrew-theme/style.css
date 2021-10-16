@@ -742,7 +742,7 @@ textarea {
 
 /* General */
 .container{
-	min-height: calc(100vh - 32rem);
+	min-height: calc(100vh - 30rem);
 	margin: 2rem auto;
 	width: clamp( 250px, 80%, 800px);
 	display: flex;
@@ -768,6 +768,13 @@ textarea {
 	gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 }
+.board-member-header-texts{
+	min-height: 7rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .professionalAttribution{
 	margin: 1rem 0;
 	border-top: 1px solid #e5e5e5;
@@ -1162,7 +1169,9 @@ header {
 	flex: none;
 	margin-top: 1rem;
 }
-
+.wp-block-search__inside-wrapper{
+	padding: 2rem;
+}
 
 
 .publication-main {
@@ -1192,8 +1201,13 @@ header {
 	display: flex;
 	justify-content: space-between;
 }
-.publication-details{
-
+.forum-video{
+	display: flex;
+	justify-content: center;
+	/* margin: 0 auto; */
+}
+.publications-main .uk-subnav-pill .uk-active a, .uk-card-body .uk-label, .publication-details .uk-label, .publication-action-container .uk-button-primary, .publication-action-container .uk-button-primary:hover{
+	background-color: var(--main);
 }
 .publication-action-container img{
 	object-fit: contain;
@@ -1254,10 +1268,6 @@ h5{font-size: 1.5rem;}
 	margin: 0;
 }
 
-.uk-accordion-title:visited{
-	color: initial;
-}
-
 .uk-accordion-title:focus{
 	border: none;
 	outline: none;
@@ -1265,6 +1275,9 @@ h5{font-size: 1.5rem;}
 
 .has-huge-font-size, .has-extra-large-font-size{
 	font-size: 2rem;
+}
+a, .entry-title a, .entry-title a:visited, .uk-card-title a, .uk-card-title a:hover, .uk-accordion-title, .uk-accordion-title:focus ,.uk-accordion-title:visited{ 
+	color: var(--main);
 }
 
 /*--------------------------------------------------------------
@@ -1327,6 +1340,36 @@ h5{font-size: 1.5rem;}
 		padding: 1rem 0;
 	}
 
+	.leaderGrid .uk-card-header .uk-flex-top{
+		flex-direction: column;
+		align-content: center;
+	}
+	.leaderGrid .uk-card-header .uk-flex-top :nth-child(2){
+		width: 100%;
+		padding-left: 0;
+	}
+	.leaderGrid .uk-card-header .uk-flex-top :nth-child(1){
+		width: 100%;
+		padding-left: 0;
+		display: flex;
+		justify-content: center;
+	}
+	.leaderGrid .uk-grid-small{
+		margin-left: 0;
+	}
+	.leaderGrid .uk-card-header .uk-flex-top img{
+		max-width: 8rem;
+		margin: 0 auto;
+	}
+	.board-member-header-texts {
+		min-height: auto;
+	}
+
+	.board-member-header-texts h4{
+		
+		text-align: center;
+	}
+	#primary > div > div > div:nth-child(2) > div.uk-card-header > div > div.uk-width-expand
 	.publications-container{
 		grid-template-columns: 1fr;
 	}
@@ -1347,6 +1390,13 @@ h5{font-size: 1.5rem;}
 	}
 	.pub-title{
 		font-size: 2rem;
+	}
+	#custom-search #wp-block-search__input-1{
+		max-width: 200px;
+		font-size: 1rem;
+	}
+	.wp-block-search__inside-wrapper{
+		justify-content: center;
 	}
 }
 
