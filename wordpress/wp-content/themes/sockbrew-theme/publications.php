@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="primary" class="publications-main">
+<main id="primary" class="publications-main container">
 	<h1>Publications</h1>
 	<!-- Filter for Categories -->
 	<div>
