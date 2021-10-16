@@ -1271,6 +1271,10 @@ h5{font-size: 1.5rem;}
 	margin: 0;
 }
 
+.search {
+	min-height: 70vh;
+}
+
 /* Override for the RED em in UI Kit */
 /* Feel free to fix the em colour in UI Kit somewhere, I was just frustrated and forced it here - Shane */
 .citation-em {
