@@ -1318,6 +1318,15 @@ h5{font-size: 1.5rem;}
 	.uk-card-title{
 		text-align: center;
 	}
+	.homecolumns {
+		flex-wrap: wrap;
+	}
+
+	.news-image {
+		min-width: 100%;
+		padding: 1rem 0;
+	}
+
 	.publications-container{
 		grid-template-columns: 1fr;
 	}
@@ -1339,13 +1348,20 @@ h5{font-size: 1.5rem;}
 	.pub-title{
 		font-size: 2rem;
 	}
-
 }
 
 .homecolumns {
 	width: clamp( 250px, 80%, 1200px);
-	margin: auto;
+	margin: 0 auto;
 	padding-top: 2em;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+}
+
+.news-image {
+	min-width: 50%;
+	padding-left: 1.5rem;
 }
 
 .about {

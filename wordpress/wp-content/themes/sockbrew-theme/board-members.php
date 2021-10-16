@@ -22,10 +22,15 @@ get_header();
 				<?php
 			$board_member_posts_query = array(
 				'posts_per_page' => -1,
-				'post_type' => 'board-member'
+				'post_type' => 'board-member',
+				'orderby' => 'menu_order'
 			);
 			
 			$board_members_posts = new WP_Query($board_member_posts_query);
+
+			$board_members_posts_reversed = array_reverse($board_members_posts->posts);
+
+			$board_members_posts->posts = $board_members_posts_reversed;
 			
 			while ( $board_members_posts->have_posts() ) :
 				$board_members_posts->the_post(); ?>
@@ -56,6 +61,10 @@ get_header();
 							<!-- card header end -->
 							<!-- card body start -->
 					<div class="uk-card-body">
+
+						<?php if(get_field('board_member_title')): ?>
+							<p class="uk-text-meta uk-margin-remove-top"><?php the_field('board_member_title'); ?></p>
+						<?php endif;?>
 
 						<?php if(get_field('secondary_title')): ?>
 							<p class="uk-text-meta uk-margin-remove-top"><?php the_field('secondary_title'); ?></p>
