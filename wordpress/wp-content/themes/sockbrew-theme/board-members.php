@@ -62,6 +62,10 @@ get_header();
 							<!-- card body start -->
 					<div class="uk-card-body">
 
+						<?php if(get_field('board_member_title')): ?>
+							<p class="uk-text-meta uk-margin-remove-top"><?php the_field('board_member_title'); ?></p>
+						<?php endif;?>
+
 						<?php if(get_field('secondary_title')): ?>
 							<p class="uk-text-meta uk-margin-remove-top"><?php the_field('secondary_title'); ?></p>
 						<?php endif;?>
