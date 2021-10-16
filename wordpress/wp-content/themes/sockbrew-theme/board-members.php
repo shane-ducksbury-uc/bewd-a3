@@ -22,10 +22,15 @@ get_header();
 				<?php
 			$board_member_posts_query = array(
 				'posts_per_page' => -1,
-				'post_type' => 'board-member'
+				'post_type' => 'board-member',
+				'orderby' => 'menu_order'
 			);
 			
 			$board_members_posts = new WP_Query($board_member_posts_query);
+
+			$board_members_posts_reversed = array_reverse($board_members_posts->posts);
+
+			$board_members_posts->posts = $board_members_posts_reversed;
 			
 			while ( $board_members_posts->have_posts() ) :
 				$board_members_posts->the_post(); ?>
