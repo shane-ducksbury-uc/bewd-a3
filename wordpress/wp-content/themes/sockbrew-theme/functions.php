@@ -220,16 +220,22 @@ function generate_publication_posts($category = null) {
 				</div>
 			</div>
 			<div class="uk-card-body">
-				<?php the_field('authors') ?>
+
+				<img class="publications-image-thumb" src="<?php the_field('publication_image')?>">
+				<div class="publication-catagories">
+					<?php
+					$post_categories = get_field('category');
+					if ($post_categories) :
+						foreach ($post_categories as $post_category) : ?>
+							<span class="uk-label"><?= $post_category->name ?></span>
+					<?php endforeach;
+					endif; ?>
+				</div>
 			</div>
 			<div class="uk-card-footer">
-				<?php
-				$post_categories = get_field('category');
-				if ($post_categories) :
-					foreach ($post_categories as $post_category) : ?>
-						<span class="uk-label"><?= $post_category->name ?></span>
-				<?php endforeach;
-				endif; ?>
+				<div>
+					<p><?php the_field('authors') ?></p>
+				</div>
 			</div>
 		</div>
 	<?php endwhile; 
