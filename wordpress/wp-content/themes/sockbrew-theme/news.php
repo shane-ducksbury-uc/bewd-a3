@@ -36,7 +36,7 @@ get_header();
 						<?php the_field('news_content') ?>
 						<?php if(get_field('clickable_link_button')):
 							foreach(get_field('clickable_link_button') as $button_parts): ?>
-								<a href="<?php echo $button_parts['url'] ?>" target="_blank"><button class="uk-button uk-button-default"><?php echo $button_parts['button_text']?></button></a>
+								<a class="news-external-link" href="<?php echo $button_parts['url'] ?>" target="_blank"><button class="uk-button uk-button-default"><?php echo $button_parts['button_text']?></button></a>
 						<?php endforeach; endif;?>
 						<div>
 							<?php $image_url = get_field('news_post_title_image'); ?>
