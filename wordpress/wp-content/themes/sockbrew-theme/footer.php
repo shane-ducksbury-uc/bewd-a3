@@ -56,14 +56,14 @@
 				<?php // add a fallback if the logo doesn't exist
 				else : ?>
 
-				<p>Email: contact@example.com</p>
+				<p>Email: ibqc@canberra.edu.au </p>
 				<?php endif; ?>
 		</div>
 		<div class="uk-width-1-3">
 		<ul class="uk-list">
-				<li><a href="#">IBQC Leadership</a></li>
-				<li><a href="#">Publications</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="/ibqc-leadership/">IBQC Leadership</a></li>
+				<li><a href="/publications/">Publications</a></li>
+				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
 	</div>
