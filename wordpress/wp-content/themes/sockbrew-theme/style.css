@@ -765,6 +765,7 @@ textarea {
 }
 .leaderGrid{
 	display: grid;
+	gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 }
 .professionalAttribution{
@@ -1181,6 +1182,44 @@ header {
 	display: flex;
 	flex-direction: column;
 }
+.publication-info-container{
+	margin: 0 0 4rem 0;
+}
+.publication-info-container h3{
+	margin: .5rem 0;
+}
+.publication-header{
+	display: flex;
+	justify-content: space-between;
+}
+.publication-details{
+
+}
+.publication-action-container img{
+	object-fit: contain;
+	max-height: 18rem;
+}
+
+.citation-details{
+
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+  
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+  
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+  
+  }
+
 
 
 /*--------------------------------------------------------------
@@ -1293,6 +1332,12 @@ h5{font-size: 1.5rem;}
 	}
 	.publications-container .uk-card .uk-card-footer{
 		text-align: center;
+	}
+	.publication-header{
+		flex-direction: column;
+	}
+	.pub-title{
+		font-size: 2rem;
 	}
 
 }
