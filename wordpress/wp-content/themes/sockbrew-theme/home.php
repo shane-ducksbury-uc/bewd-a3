@@ -21,41 +21,47 @@ get_header();
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<div class="home-content">
-				<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
 
-			the_posts_navigation();
-
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
-		?>
-				</div>
-				
 
-	</main><!-- #main -->
+		$publications_posts_query = array(
+					'posts_per_page' => 1,
+					'post_type' => 'news-post'
+				);
+		
+
+				$news_posts = new WP_Query($publications_posts_query);
+
+				while ( $news_posts->have_posts()):
+					$news_posts->the_post();?>
+
+					<div class="homecolumns">
+						<div class="news-text">
+							<h2>Latest News</h2>
+							<?php the_title("<h3>", "</h3>"); ?>
+							<?php the_field('news_content'); ?>
+							<?php if(get_field('clickable_link_button')):
+							foreach(get_field('clickable_link_button') as $button_parts): ?>
+								<a href="<?php echo $button_parts['url'] ?>" target="_blank"><button class="uk-button uk-button-default"><?php echo $button_parts['button_text']?></button></a>
+						<?php endforeach; endif;?>
+						</div>
+						<div class="news-image">
+							<?php $image_url = get_field('news_post_title_image'); ?>
+							<img src="<?= $image_url ?>" alt="">
+						</div>
+					</div>
+				<?php endwhile;?>
+		</main>
 
 <?php
-// get_sidebar();
 get_footer();
