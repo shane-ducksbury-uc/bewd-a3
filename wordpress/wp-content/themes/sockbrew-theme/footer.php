@@ -61,10 +61,10 @@
 		</div>
 		<div class="uk-width-1-3">
 		<ul class="uk-list">
-				<li><a href="/leadership/">IBQC Leadership</a></li>
+				<li><a href="/leadership/">Leadership</a></li>
 				<li><a href="/publications/">Publications</a></li>
-				<li><a href="/ibqc-news">IBQC News</a></li>
 				<li><a href="/contact">Contact</a></li>
+				<li><a href="/ibqc-news">News</a></li>
 			</ul>
 		</div>
 	</div>
