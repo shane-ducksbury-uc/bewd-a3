@@ -94,7 +94,7 @@ get_header();
 								<a class="uk-accordion-title" href="#">Positions</a>
 								<div class="uk-accordion-content">
 									
-								<?php if(get_field('professional_affiliations')): ?>
+								<?php if(get_field('professional_affiliations')): {?>
 									<?php 		
 										$affiliations = get_field('professional_affiliations'); 
 										foreach ($affiliations as $affiliation): ?>
@@ -121,7 +121,9 @@ get_header();
 											</div>
 											
 										<?php endforeach; ?>
-								<?php endif; ?>
+								<?php } else : { ?>
+									<p>No positions listed</p>								
+									<?php }endif; ?>
 
 								</div>
 							</li>
@@ -129,7 +131,7 @@ get_header();
 								<a class="uk-accordion-title" href="#">Awards</a>
 								<div class="uk-accordion-content">
 									
-								<?php if(get_field('awards')): ?>
+								<?php if(get_field('awards')): {?>
 									<?php 		
 										$awards = get_field('awards'); 
 										foreach ($awards as $award): ?>
@@ -142,7 +144,9 @@ get_header();
 												<p><?php echo $award['award_year']; ?></p>
 											</div>		
 									<?php endforeach; ?>
-								<?php endif; ?>
+								<?php }else : { ?>
+									<p>No awards listed</p>								
+								<?php }endif; ?>
 
 								</div>
 							</li>
