@@ -1372,9 +1372,17 @@ a, .entry-title a, .entry-title a:visited, .uk-card-title a, .uk-card-title a:ho
 		
 		text-align: center;
 	}
-	#primary > div > div > div:nth-child(2) > div.uk-card-header > div > div.uk-width-expand
+	
 	.publications-container{
 		grid-template-columns: 1fr;
+		width: clamp(250px, 90%, 560px);
+	}
+	.publications-container .uk-card-title{
+		font-size: 1.5rem;
+	}
+	.publications-main .uk-subnav-pill{
+		margin-left: 0;
+		width: clamp(250px, 90%, 560px);
 	}
 	.publications-container .uk-card .uk-card-body{
 		flex-direction: column;
