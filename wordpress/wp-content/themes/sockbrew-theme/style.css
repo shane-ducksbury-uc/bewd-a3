@@ -791,6 +791,10 @@ textarea {
 .news-external-link{
 	margin: 0 0 1rem 0;
 }
+
+.leaderGrid .uk-accordion-title:hover{
+	color: var(--main);
+}
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -1235,7 +1239,9 @@ header {
   }
 
 
-
+ .pub-container{ 
+	 width: clamp();
+ }
 /*--------------------------------------------------------------
 # typogoraphy overrides
 --------------------------------------------------------------*/
@@ -1405,6 +1411,16 @@ a, .entry-title a, .entry-title a:visited, .uk-card-title a, .uk-card-title a:ho
 	}
 	.wp-block-search__inside-wrapper{
 		justify-content: center;
+	}
+}
+
+/* XL devices */
+@media only screen and (min-width: 1200px) {
+	.container{
+		width: clamp( 250px, 80%, 1200px);
+	}
+	.publications-container{
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
