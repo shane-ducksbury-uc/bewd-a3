@@ -27,15 +27,27 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-			endwhile;
+				
+				if (get_post_type() == "board-member"): { 
+					$bio = get_field('bio'); // Overwrite the permalink below because I don't want to go the single		?>
+					<a class="search-result" href="/ibqc-leadership#<?php echo the_id();?>/"><h2><?php the_title(); ?></h2></a>
+					<p>Board Member</p>
+					<?php echo substr($bio, 0, 250);?>...</p>
+				<?php } elseif (get_post_type() == "publication"): { ?>
+					<a href="<?php the_permalink()?>"><h2><?php the_title(); ?></h2></a>
+					<p>Publication</p>
+					<p><?php echo substr(get_field('abstract'), 0, 250) ?>...</p>
+				<?php } elseif (get_post_type() == "forum"): { ?>
+					<a href="<?php the_permalink()?>"><h2><?php the_title(); ?></h2></a>
+					<p>Forum</p>
+					<p><?php echo substr(get_field('description'), 0, 250) ?>...</p>
+				<?php } else: { ?>
+					<a href="<?php the_permalink()?>"><h2><?php the_title(); ?></h2></a>
+					<?php the_excerpt()?>
+				<?php }
+			endif; ?>
+				<hr>
+			<?php endwhile;
 
 			the_posts_navigation();
 

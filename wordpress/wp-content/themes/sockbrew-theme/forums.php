@@ -35,14 +35,9 @@ get_header();
 							<p><?php the_field('forum_date') ?></p>
 						</div>
 				<div class="uk-card-body">
-					<?php the_field('description') ?>
+					<p><?php echo substr(get_field('description'), 0, 250) ?>...</p>
 				</div>
 				<div class="uk-card-footer">
-					<?php 
-						// Put some buttons in here if valid?
-					
-					
-						?>
 				</div>
 				</div>
 			<?php endwhile; ?>
