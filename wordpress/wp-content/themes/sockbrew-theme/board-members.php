@@ -34,7 +34,7 @@ get_header();
 			
 			while ( $board_members_posts->have_posts() ) :
 				$board_members_posts->the_post(); ?>
-				<div class="uk-card uk-card-default">
+				<div class="uk-card uk-card-default" id="<?php the_id(); ?>">
 
 
 				<!-- card header start -->
