@@ -30,7 +30,7 @@ get_header();
 				
 				if (get_post_type() == "board-member"): { 
 					$bio = get_field('bio'); // Overwrite the permalink below because I don't want to go the single		?>
-					<a class="search-result" href="/leadership#<?php echo the_id();?>/"><h2><?php the_title(); ?></h2></a>
+					<a class="search-result" href="/leadership/"><h2><?php the_title(); ?></h2></a>
 					<p>Board Member</p>
 					<?php echo substr($bio, 0, 250);?>...</p>
 				<?php } elseif (get_post_type() == "publication"): { ?>
