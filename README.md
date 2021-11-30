@@ -1,14 +1,26 @@
 # Back End Web Assignment 3
 ## Kate, Olly and Shane
-Repo for Back End Web Assignment 3
+Archived Repo for Back End Web Assignment 3
 
-This git repo is in sync with dev.sockbrew.design.
+## To Redeploy This Site
+### Linux Server and Docker
+Pull the latest repo onto a new server.
+Edit the docker-compose.yml to expose the MySQL port.
+Run the docker-compose.yml in the root directory.
+Go to the MySQL port and import the newest backup of the db from wp-content/uploads/wp-migrate-db/
+Set up Nginx and LetsEncrypt, then move the sockbrew_design_nginx_conf to /etc/nginx/sites-available
+Check the site works and then you should be able to log into the backend as normal.
 
-If you push from your local to this git repo's main branch it will update the dev.sockbrew.design site automatically. (Danger - don't push your local database.)
+### WP Hosting elsewhere
+N.B this should work but hasn't been tested.
+Pull the latest repo down to your machine.
+FTP or transfer the contents of the Wordpress folder to the host
+Log into the MySQL using whatever tools the host provides
+Import the latest backup from wp-content/uploads/wp-migrate-db/
+Check the site works and you should be able to log into the backend as normal.
 
-The server is also in sync with Github. Any content you add to the server will be automatically added. The sync happens every five minutes, so if you need some files locally, wait five minutes and try pulling from the repo again.
 
-Work on a different branch to main and open up PR's rather than pushing directly to the main branch.
+## Archive Instructions
 
 ## Running Locally - Each time
 If you haven't done setup yet - go down to that first.
