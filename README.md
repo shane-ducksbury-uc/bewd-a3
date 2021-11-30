@@ -4,20 +4,20 @@ Archived Repo for Back End Web Assignment 3
 
 ## To Redeploy This Site
 ### Linux Server and Docker
-Pull the latest repo onto a new server.
-Edit the docker-compose.yml to expose the MySQL port.
-Run the docker-compose.yml in the root directory.
-Go to the MySQL port and import the newest backup of the db from wp-content/uploads/wp-migrate-db/
-Set up Nginx and LetsEncrypt, then move the sockbrew_design_nginx_conf to /etc/nginx/sites-available
-Check the site works and then you should be able to log into the backend as normal.
+1. Pull the latest repo onto a new server.
+2. Edit the docker-compose.yml to expose the MySQL port.
+3. Run the docker-compose.yml in the root directory.
+4. Go to the MySQL port and import the newest backup of the db from wp-content/uploads/wp-migrate-db/
+5. Set up Nginx and LetsEncrypt, then move the sockbrew_design_nginx_conf to /etc/nginx/sites-available
+6. Check the site works and then you should be able to log into the backend as normal.
 
 ### WP Hosting elsewhere
 N.B this should work but hasn't been tested.
-Pull the latest repo down to your machine.
-FTP or transfer the contents of the Wordpress folder to the host
-Log into the MySQL using whatever tools the host provides
-Import the latest backup from wp-content/uploads/wp-migrate-db/
-Check the site works and you should be able to log into the backend as normal.
+1. Pull the latest repo down to your machine.
+2. FTP or transfer the contents of the Wordpress folder to the host
+3. Log into the MySQL using whatever tools the host provides
+4. Import the latest backup from wp-content/uploads/wp-migrate-db/
+5. Check the site works and you should be able to log into the backend as normal.
 
 
 ## Archive Instructions
